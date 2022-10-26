@@ -7,4 +7,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\rocket_league.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\rocket_league.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

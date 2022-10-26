@@ -15,14 +15,41 @@ using System.Windows.Shapes;
 
 namespace SeriesScoreOverlay
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void homeAddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void homeSubtractButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void awayAddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void awaySubtractButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void clearButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void applyButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

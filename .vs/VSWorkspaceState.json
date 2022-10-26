@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SeriesScoreOverlay"
   ],
-  "SelectedNode": "\\C:\\Users\\REsportsadmin\\Desktop\\series-score-overlay",
+  "SelectedNode": "\\SeriesScoreOverlay\\MainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }

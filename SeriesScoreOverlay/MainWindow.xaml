@@ -5,5 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SeriesScoreOverlay"
         mc:Ignorable="d"
-        Title="series-score-overlay" Height="1080" Width="1920" Background="#FF00B140">
+        Title="Series Score Controls" Height="Auto" Width="Auto" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize">
+    <Grid Width="600" Height="350">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Home</Label>
+        <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Away</Label>
+        <TextBox Name="homeTextBox" Text="Home Team" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" Margin="10" FontSize="16"/>
+        <TextBox Name="awayTextBox" Text="Away Team" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Margin="10" FontSize="16"/>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Name="homeAddButton" Grid.Row="0" Margin="10" Click="homeAddButton_Click">Add (+1)</Button>
+            <Button Name="homeSubtractButton" Grid.Row="1" Margin="10" Click="homeSubtractButton_Click">Remove (-1)</Button>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Name="awayAddButton" Grid.Row="0" Margin="10" Click="awayAddButton_Click">Add (+1)</Button>
+            <Button Name="awaySubtractButton" Grid.Row="1" Margin="10" Click="awaySubtractButton_Click">Remove (-1)</Button>
+        </Grid>
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12">Scoreboard Controls</Label>
+        <Button Name="clearButton" Grid.Row="4" Grid.Column="0" Margin="80, 20, 20, 20" Click="clearButton_Click">Clear</Button>
+        <Button Name="applyButton" Grid.Row="4" Grid.Column="1" Margin="20, 20, 80, 20" Click="applyButton_Click">Apply</Button>
+    </Grid>
 </Window>
