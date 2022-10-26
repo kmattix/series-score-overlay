@@ -28,6 +28,7 @@ namespace SeriesScoreOverlay
         {
             if (!visable)
             {
+                view = new OverlayWindow();
                 view.Show();
                 visable = true;
             }
