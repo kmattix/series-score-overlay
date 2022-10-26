@@ -17,39 +17,43 @@ namespace SeriesScoreOverlay
 {
     public partial class MainWindow : Window
     {
+        Scoreboard scoreboard;
         public MainWindow()
         {
             InitializeComponent();
+            scoreboard = new Scoreboard(homeTextBox.Text, awayTextBox.Text);
         }
 
         private void homeAddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            scoreboard.addHomeScore();
         }
 
         private void homeSubtractButton_Click(object sender, RoutedEventArgs e)
         {
-
+            scoreboard.removeHomeScore();
         }
 
         private void awayAddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            scoreboard.addAwayScore();
         }
 
         private void awaySubtractButton_Click(object sender, RoutedEventArgs e)
         {
-
+            scoreboard.removeAwayScore();
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
-
+            scoreboard.clear();
         }
 
         private void applyButton_Click(object sender, RoutedEventArgs e)
         {
-
+            scoreboard.changeHomeName(homeTextBox.Text);
+            scoreboard.changeAwayName(awayTextBox.Text);
+            scoreboard.apply();
         }
     }
 }
