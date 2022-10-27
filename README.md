@@ -1,5 +1,5 @@
 # series-score-overlay
-Work-in-progress to get base functionality working...
+Work-in-progress to get base functionality up. All changes are being pushed to main right now.
 
 ## todo
 * Fix crash due to apply button throwing NPE
