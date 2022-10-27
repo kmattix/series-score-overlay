@@ -5,7 +5,7 @@ Work-in-progress to get base functionality working...
 * Fix crash due to apply button throwing NPE
 * Add BoX feature
 * Add current game feature
-* Change overlay design to something better
+* Change overlay design to something better (doesn't use transparency)
 * Add support for other games:
   - Rocket League
   - Valorant
