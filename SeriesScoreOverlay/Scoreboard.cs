@@ -11,7 +11,7 @@ namespace SeriesScoreOverlay
     {
         private string homeName, awayName;
         private int homeScore, awayScore;
-        static public bool visable;
+        private bool visable;
         private OverlayWindow view;
         
         public Scoreboard(string _homeName, string _awayName)
