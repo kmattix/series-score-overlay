@@ -27,26 +27,32 @@ namespace SeriesScoreOverlay
         private void homeAddButton_Click(object sender, RoutedEventArgs e)
         {
             scoreboard.addHomeScore();
+            homeScore.Content = scoreboard.getHomeScore();
         }
 
         private void homeSubtractButton_Click(object sender, RoutedEventArgs e)
         {
             scoreboard.removeHomeScore();
+            homeScore.Content = scoreboard.getHomeScore();
         }
 
         private void awayAddButton_Click(object sender, RoutedEventArgs e)
         {
             scoreboard.addAwayScore();
+            awayScore.Content = scoreboard.getAwayScore();
         }
 
         private void awaySubtractButton_Click(object sender, RoutedEventArgs e)
         {
             scoreboard.removeAwayScore();
+            awayScore.Content = scoreboard.getAwayScore();
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
             scoreboard.clear();
+            awayScore.Content = scoreboard.getAwayScore();
+            homeScore.Content = scoreboard.getHomeScore();
         }
 
         private void applyButton_Click(object sender, RoutedEventArgs e)

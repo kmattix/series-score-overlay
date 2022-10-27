@@ -84,5 +84,15 @@ namespace SeriesScoreOverlay
             if (visable && awayScore > 0)
                 awayScore--;
         }
+
+        public int getHomeScore()
+        {
+            return homeScore;
+        }
+
+        public int getAwayScore()
+        {
+            return awayScore;
+        }
     }
 }

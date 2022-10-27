@@ -19,7 +19,10 @@
             <RowDefinition Height="1.5*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Home</Label>
+        <Label Name="homeScore" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Padding="0, 0, 10, 0">0</Label>
+        <Label  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">:</Label>
         <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Away</Label>
+        <Label Name="awayScore" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Padding="10, 0, 0, 0">0</Label>
         <TextBox Name="homeTextBox" Text="Home Team" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" Margin="10" FontSize="16"/>
         <TextBox Name="awayTextBox" Text="Away Team" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Margin="10" FontSize="16"/>
         <Grid Grid.Row="2" Grid.Column="0">
