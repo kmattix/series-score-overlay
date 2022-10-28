@@ -14,4 +14,4 @@ Stream scoreboard overlay to track a games series. Currently the only officially
 * ~~Change overlay design to something better~~ (kind of finished, but could always be better)
 
 ## running the app
-Download the `publish.zip` under releases, extract it, and run `SeriesScoreOverlay.exe`.
+Go to `Releases` and select the most recent `Tag`, then follow the `Setup` steps.
