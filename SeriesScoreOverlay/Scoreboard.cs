@@ -13,18 +13,28 @@ namespace SeriesScoreOverlay
         Away
     }
 
+    public enum SeriesType
+    {
+        Bo1,
+        Bo3,
+        Bo5,
+        Bo7,
+        Bo9
+    }
+
     public class Scoreboard
     {
         private string homeName, awayName;
+        public SeriesType seriesType { get; set; }
         public int homeScore { get; private set; }
         public int awayScore { get; private set; }
         public bool isVisable { get; private set; }
         private OverlayWindow view;
-        
         public Scoreboard(string _homeName, string _awayName)
         {
             homeName = _homeName;
             awayName = _awayName;
+            seriesType = SeriesType.Bo1;
             homeScore = 0;
             awayScore = 0;
             isVisable = false;
@@ -79,6 +89,11 @@ namespace SeriesScoreOverlay
 
             if (team == Team.Home && homeScore > 0) homeScore--;
             else if (awayScore > 0) awayScore--;
+        }
+
+        public int getGameNumber()
+        {
+            return homeScore + awayScore;
         }
     }
 }
