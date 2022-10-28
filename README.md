@@ -1,5 +1,5 @@
 # series-score-overlay
-**Work-in-progress**
+**WORK-IN-PROGRESS**
 
 Stream scoreboard overlay to track a games series. Currently the only officially supported game is Rocket League with Bo1-9 modes.
 
@@ -16,4 +16,4 @@ Stream scoreboard overlay to track a games series. Currently the only officially
 * ~~Change overlay design to something better~~ (kind of finished, but could always be better)
 
 ## running the app
-Go to `Releases` and select the most recent `Tag`, then follow the `Setup` steps.
+Go to [Releases](https://github.com/kmattix/series-score-overlay/releases) and select the most recent `Tag`, then follow the `Setup` steps.
