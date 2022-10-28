@@ -1,9 +1,9 @@
 # series-score-overlay
 **Work-in-progress**
+
 Stream scoreboard overlay to track a games series. Currently the only officially supported game is Rocket League with Bo1-9 modes.
 
 ## todo
-* Check for support on other resolutions.
 * Add support for other games:
   - Valorant
   - League of Legends
