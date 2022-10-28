@@ -6,18 +6,30 @@
         xmlns:local="clr-namespace:SeriesScoreOverlay"
         mc:Ignorable="d"
         Title="Series Score Overlay" Height="Auto" Width="Auto" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Background="#FF00B140">
-    <Grid Width="1226" Height="80">
+    <Grid Width="1575" Height="145">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="35*"></ColumnDefinition>
             <ColumnDefinition Width="170*"></ColumnDefinition>
+            <ColumnDefinition Width="190*"></ColumnDefinition>
             <ColumnDefinition Width="170*"></ColumnDefinition>
-            <ColumnDefinition Width="170*"></ColumnDefinition>
-            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="35*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Left" Source="/Images/rocket_league.png"/>
-        <TextBlock Name="homeTeamScoreText" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="48" FontFamily="Bahnschrift SemiBold" Foreground="White"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10.6*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Source="/Images/rocket_league.png"/>
+        <TextBlock Name="homeTeamScoreText" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="72" FontFamily="Bahnschrift SemiBold" Foreground="Black"/>
         <TextBlock Name="homeTeamText" Text="HOME TEAM" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="10" FontSize="48" FontFamily="Bahnschrift SemiBold" Foreground="White"/>
         <TextBlock Name="awayTeamText" Text="AWAY TEAM" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="10" FontSize="48" FontFamily="Bahnschrift SemiBold" Foreground="White"/>
-        <TextBlock Name="awayTeamScoreText" Text="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="48" FontFamily="Bahnschrift SemiBold" Foreground="White"/>
+        <TextBlock Name="awayTeamScoreText" Text="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="72" FontFamily="Bahnschrift SemiBold" Height="106" Width="60"/>
+        <Grid Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="gameNumberText" Text="GAME 1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="28" FontFamily="Bahnschrift SemiBold" Foreground="White"/>
+            <TextBlock Name="seriesTypeText" Text="BO1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="28" FontFamily="Bahnschrift SemiBold" Foreground="Black"/>
+        </Grid>
     </Grid>
 </Window>
