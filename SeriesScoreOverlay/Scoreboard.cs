@@ -18,8 +18,8 @@ namespace SeriesScoreOverlay
         Bo1 = 1,
         Bo3 = 2,
         Bo5 = 3,
-        Bo7 = 5,
-        Bo9 = 7
+        Bo7 = 4,
+        Bo9 = 5
     }
 
     public class Scoreboard
@@ -54,8 +54,8 @@ namespace SeriesScoreOverlay
             view.awayTeamText.Text = awayName;
             view.awayTeamScoreText.Text = awayScore.ToString();
             view.seriesTypeText.Text = seriesType.ToString();
-            int score = homeScore + awayScore + 1;
-            view.gameNumberText.Text = score > (int) seriesType ? "Final" : $"Game {score}";
+            view.gameNumberText.Text = (homeScore >= (int) seriesType) || (awayScore >= (int) seriesType)? 
+                "Final" : $"Game {homeScore + awayScore + 1}";
         }
 
         public void clear()
