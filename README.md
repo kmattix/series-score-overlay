@@ -5,6 +5,7 @@ Stream scoreboard overlay to track a games series. Currently the only officially
 
 ## todo
 * Check support for other resolutions.
+* Add global keybinds for changing score.
 * Add support for other games:
   - Valorant
   - League of Legends
