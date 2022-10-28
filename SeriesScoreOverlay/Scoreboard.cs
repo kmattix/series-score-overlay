@@ -82,8 +82,8 @@ namespace SeriesScoreOverlay
         {
             if (!isVisable) return;
 
-            if (team == Team.Home) homeScore++;
-            else awayScore++;
+            if (team == Team.Home && homeScore + 1 <= (int) seriesType) homeScore++;
+            else if(awayScore + 1 <= (int) seriesType) awayScore++;
         }
 
         public void removeScore(Team team)
