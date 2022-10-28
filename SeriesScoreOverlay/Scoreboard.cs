@@ -16,10 +16,10 @@ namespace SeriesScoreOverlay
     public enum SeriesType
     {
         Bo1 = 1,
-        Bo3 = 3,
-        Bo5 = 5,
-        Bo7 = 7,
-        Bo9 = 9
+        Bo3 = 2,
+        Bo5 = 3,
+        Bo7 = 5,
+        Bo9 = 7
     }
 
     public class Scoreboard
