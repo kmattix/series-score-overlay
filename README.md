@@ -12,4 +12,4 @@ Work-in-progress to get base functionality up. All changes are being pushed to m
 * ~~Change overlay design to something better~~ (kind of finished, but could always be better)
 
 ## running the app
-Download the `publish.zip`, extract it, and run `SeriesScoreOverlay.exe`.
+Download the `publish.zip` under releases, extract it, and run `SeriesScoreOverlay.exe`.
