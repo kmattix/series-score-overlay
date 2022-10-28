@@ -17,7 +17,8 @@ namespace SeriesScoreOverlay
 {
     public partial class MainWindow : Window
     {
-        Scoreboard scoreboard;
+        private Scoreboard scoreboard;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -26,40 +27,42 @@ namespace SeriesScoreOverlay
 
         private void homeAddButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.addHomeScore();
-            homeScore.Content = scoreboard.getHomeScore();
+            scoreboard.addScore(Team.Home);
+            homeScore.Content = scoreboard.homeScore;
         }
 
-        private void homeSubtractButton_Click(object sender, RoutedEventArgs e)
+        private void homeRemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.removeHomeScore();
-            homeScore.Content = scoreboard.getHomeScore();
+            scoreboard.removeScore(Team.Home);
+            homeScore.Content = scoreboard.homeScore;
         }
 
         private void awayAddButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.addAwayScore();
-            awayScore.Content = scoreboard.getAwayScore();
+            scoreboard.addScore(Team.Away);
+            awayScore.Content = scoreboard.awayScore;
         }
 
-        private void awaySubtractButton_Click(object sender, RoutedEventArgs e)
+        private void awayRemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.removeAwayScore();
-            awayScore.Content = scoreboard.getAwayScore();
+            scoreboard.removeScore(Team.Away);
+            awayScore.Content = scoreboard.awayScore;
+        }
+
+        private void applyButton_Click(object sender, RoutedEventArgs e)
+        {
+            scoreboard.changeName(Team.Home, homeTextBox.Text);
+            scoreboard.changeName(Team.Away, awayTextBox.Text);
+            scoreboard.apply();
+            applyButton.Content = "Apply";
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
             scoreboard.clear();
-            awayScore.Content = scoreboard.getAwayScore();
-            homeScore.Content = scoreboard.getHomeScore();
-        }
-
-        private void applyButton_Click(object sender, RoutedEventArgs e)
-        {
-            scoreboard.changeHomeName(homeTextBox.Text);
-            scoreboard.changeAwayName(awayTextBox.Text);
-            scoreboard.apply();
+            applyButton.Content = "Launch";
+            awayScore.Content = scoreboard.awayScore;
+            homeScore.Content = scoreboard.homeScore;
         }
     }
 }

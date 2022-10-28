@@ -7,11 +7,18 @@ using System.Threading.Tasks;
 
 namespace SeriesScoreOverlay
 {
+    public enum Team
+    {
+        Home,
+        Away
+    }
+
     public class Scoreboard
     {
         private string homeName, awayName;
-        private int homeScore, awayScore;
-        private bool visable;
+        public int homeScore { get; private set; }
+        public int awayScore { get; private set; }
+        public bool isVisable { get; private set; }
         private OverlayWindow view;
         
         public Scoreboard(string _homeName, string _awayName)
@@ -20,17 +27,17 @@ namespace SeriesScoreOverlay
             awayName = _awayName;
             homeScore = 0;
             awayScore = 0;
-            visable = false;
+            isVisable = false;
             view = new OverlayWindow();
         }
 
         public void apply()
         {
-            if (!visable)
+            if (!isVisable)
             {
                 view = new OverlayWindow();
                 view.Show();
-                visable = true;
+                isVisable = true;
             }
             view.homeTeamText.Text = homeName;
             view.homeTeamScoreText.Text = homeScore.ToString();
@@ -40,59 +47,38 @@ namespace SeriesScoreOverlay
 
         public void clear()
         {
-            if (visable)
+            if (isVisable)
             {
                 view.Close();
-                visable = false;
+                isVisable = false;
             }
-            homeName = "";
-            awayName = "";
+
             homeScore = 0;
             awayScore = 0;
         }
 
-        public void changeHomeName(string name)
+        public void changeName(Team team, string name)
         {
-            homeName = name.ToUpper();
+            name = name.ToUpper();
+
+            if(team == Team.Home) homeName = name;
+            else awayName = name;
         }
 
-        public void changeAwayName(string name)
+        public void addScore(Team team)
         {
-            awayName = name.ToUpper();
+            if (!isVisable) return;
+
+            if (team == Team.Home) homeScore++;
+            else awayScore++;
         }
 
-        public void addHomeScore()
+        public void removeScore(Team team)
         {
-            if (visable)
-                homeScore++;
-        }
+            if (!isVisable) return;
 
-        public void removeHomeScore()
-        {
-            if (visable && homeScore > 0)
-                homeScore--;
-        }
-
-        public void addAwayScore()
-        {
-            if (visable)
-                awayScore++;
-        }
-
-        public void removeAwayScore()
-        {
-            if (visable && awayScore > 0)
-                awayScore--;
-        }
-
-        public int getHomeScore()
-        {
-            return homeScore;
-        }
-
-        public int getAwayScore()
-        {
-            return awayScore;
+            if (team == Team.Home && homeScore > 0) homeScore--;
+            else if (awayScore > 0) awayScore--;
         }
     }
 }
