@@ -23,6 +23,12 @@ namespace SeriesScoreOverlay
         {
             InitializeComponent();
             scoreboard = new Scoreboard(homeTextBox.Text, awayTextBox.Text);
+
+            foreach (SeriesType st in Enum.GetValues(typeof(SeriesType)))
+            {
+                seriesTypeComboBox.Items.Add(st);
+            }
+            seriesTypeComboBox.SelectedIndex = 0;
         }
 
         private void homeAddButton_Click(object sender, RoutedEventArgs e)
@@ -53,8 +59,10 @@ namespace SeriesScoreOverlay
         {
             scoreboard.changeName(Team.Home, homeTextBox.Text);
             scoreboard.changeName(Team.Away, awayTextBox.Text);
+            scoreboard.seriesType = (SeriesType)seriesTypeComboBox.SelectedItem;
             scoreboard.apply();
             applyButton.Content = "Apply";
+            clearButton.IsEnabled = true;
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
@@ -63,6 +71,7 @@ namespace SeriesScoreOverlay
             applyButton.Content = "Launch";
             awayScore.Content = scoreboard.awayScore;
             homeScore.Content = scoreboard.homeScore;
+            clearButton.IsEnabled = false;
         }
     }
 }

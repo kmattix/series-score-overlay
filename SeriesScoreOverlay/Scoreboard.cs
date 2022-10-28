@@ -15,11 +15,11 @@ namespace SeriesScoreOverlay
 
     public enum SeriesType
     {
-        Bo1,
-        Bo3,
-        Bo5,
-        Bo7,
-        Bo9
+        Bo1 = 1,
+        Bo3 = 3,
+        Bo5 = 5,
+        Bo7 = 7,
+        Bo9 = 9
     }
 
     public class Scoreboard
@@ -53,6 +53,9 @@ namespace SeriesScoreOverlay
             view.homeTeamScoreText.Text = homeScore.ToString();
             view.awayTeamText.Text = awayName;
             view.awayTeamScoreText.Text = awayScore.ToString();
+            view.seriesTypeText.Text = seriesType.ToString();
+            int score = homeScore + awayScore + 1;
+            view.gameNumberText.Text = score > (int) seriesType ? "Final" : $"Game {score}";
         }
 
         public void clear()
@@ -89,11 +92,6 @@ namespace SeriesScoreOverlay
 
             if (team == Team.Home && homeScore > 0) homeScore--;
             else if (awayScore > 0) awayScore--;
-        }
-
-        public int getGameNumber()
-        {
-            return homeScore + awayScore;
         }
     }
 }
