@@ -10,3 +10,6 @@ Work-in-progress to get base functionality up. All changes are being pushed to m
   - Smash Ultimate
   - NBA2k
   - FIFA
+
+##running the app
+Download the `publish.zip`, extract it, and run `SeriesScoreOverlay.exe`.
