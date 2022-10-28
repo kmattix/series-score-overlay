@@ -2,7 +2,6 @@
 Work-in-progress to get base functionality up. All changes are being pushed to main right now.
 
 ## todo
-* Change overlay design to something better
 * Add support for other games:
   - Valorant
   - League of Legends
@@ -10,6 +9,7 @@ Work-in-progress to get base functionality up. All changes are being pushed to m
   - NBA2k
   - FIFA
 * Make it so the window can be resized dynamically?? (this might be problematic though)
+* ~~Change overlay design to something better~~ (kind of finished, but could always be better)
 
 ## running the app
 Download the `publish.zip`, extract it, and run `SeriesScoreOverlay.exe`.
