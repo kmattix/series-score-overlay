@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeriesScoreOverlay.Hotkeys;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,27 @@ namespace SeriesScoreOverlay
                 seriesTypeComboBox.Items.Add(st);
             }
             seriesTypeComboBox.SelectedIndex = 0;
+
+            HotkeysManager.SetupSystemHook();
+            HotkeysManager.AddHotkey(new GlobalHotkey(ModifierKeys.Control, Key.F5, () => hkPressed(Team.Home, true)));
+            HotkeysManager.AddHotkey(new GlobalHotkey(ModifierKeys.Control, Key.F7, () => hkPressed(Team.Home, false)));
+            HotkeysManager.AddHotkey(new GlobalHotkey(ModifierKeys.Control, Key.F6, () => hkPressed(Team.Away, true)));
+            HotkeysManager.AddHotkey(new GlobalHotkey(ModifierKeys.Control, Key.F8, () => hkPressed(Team.Away, false)));
+            Closing += MainWindow_Closing;
+        }
+
+        private void hkPressed(Team team, bool add)
+        {
+            if (team == Team.Home && add) homeAddButton_Click(null, new RoutedEventArgs());
+            else if (team == Team.Home && !add) homeRemoveButton_Click(null, new RoutedEventArgs());
+            else if (team == Team.Away && add) awayAddButton_Click(null, new RoutedEventArgs());
+            else if (team == Team.Away && !add) awayRemoveButton_Click(null, new RoutedEventArgs());
+            applyButton_Click(null, new RoutedEventArgs());
+        }
+
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            HotkeysManager.ShutdownSystemHook();
         }
 
         private void homeAddButton_Click(object sender, RoutedEventArgs e)

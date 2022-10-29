@@ -34,16 +34,16 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Name="homeAddButton" Grid.Row="0" Margin="10" Click="homeAddButton_Click">Add (+1)</Button>
-            <Button x:Name="homeRemoveButton" Grid.Row="1" Margin="10" Click="homeRemoveButton_Click">Remove (-1)</Button>
+            <Button Name="homeAddButton" Grid.Row="0" Margin="10" Click="homeAddButton_Click">Add (Ctrl+F5)</Button>
+            <Button x:Name="homeRemoveButton" Grid.Row="1" Margin="10" Click="homeRemoveButton_Click">Remove (Ctrl+F7)</Button>
         </Grid>
         <Grid Grid.Row="3" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Name="awayAddButton" Grid.Row="0" Margin="10" Click="awayAddButton_Click">Add (+1)</Button>
-            <Button x:Name="awayRemoveButton" Grid.Row="1" Margin="10" Click="awayRemoveButton_Click">Remove (-1)</Button>
+            <Button Name="awayAddButton" Grid.Row="0" Margin="10" Click="awayAddButton_Click">Add (Ctrl+F6)</Button>
+            <Button x:Name="awayRemoveButton" Grid.Row="1" Margin="10" Click="awayRemoveButton_Click">Remove (Ctrl+F8)</Button>
         </Grid>
         <Separator Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
         <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12">Scoreboard Controls</Label>
