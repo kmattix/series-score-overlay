@@ -8,10 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\league_of_legends.png" />
     <None Remove="Images\rocket_league.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\league_of_legends.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\rocket_league.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
