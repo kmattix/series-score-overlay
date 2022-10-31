@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Name="gameNumberText" Text="GAME 1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="28" FontFamily="Bahnschrift SemiBold" Foreground="White"/>
-            <TextBlock Name="seriesTypeText" Text="BO1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="28" FontFamily="Bahnschrift SemiBold" Foreground="Black"/>
+            <TextBlock Name="seriesTypeText" Text="Bo1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="28" FontFamily="Bahnschrift SemiBold" Foreground="Black"/>
         </Grid>
     </Grid>
 </Window>

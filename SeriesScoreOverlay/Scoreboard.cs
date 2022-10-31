@@ -30,6 +30,7 @@ namespace SeriesScoreOverlay
         public int awayScore { get; private set; }
         public bool isVisable { get; private set; }
         private LeagueOfLegendsOverlay view;
+
         public Scoreboard(string _homeName, string _awayName)
         {
             homeName = _homeName;

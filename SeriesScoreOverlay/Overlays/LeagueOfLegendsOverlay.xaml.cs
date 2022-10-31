@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace SeriesScoreOverlay
 {
-    /// <summary>
-    /// Interaction logic for LeagueOfLegendsOverlay.xaml
-    /// </summary>
     public partial class LeagueOfLegendsOverlay : Window
     {
         public LeagueOfLegendsOverlay()
