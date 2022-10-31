@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SeriesScoreOverlay"
         mc:Ignorable="d"
-        Title="Series Score Overlay" Height="Auto" Width="Auto" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Background="#FF00B140">
+        Title="Series Score Overlay - LoL" Height="Auto" Width="Auto" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Background="#FF00B140">
     <Grid Width="1648" Height="121">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="35*"></ColumnDefinition>
@@ -29,8 +29,8 @@
                 <ColumnDefinition Width="8*"></ColumnDefinition>
                 <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Name="gameNumberText" Text="GAME 1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="16" FontFamily="Bahnschrift SemiBold" Foreground="White"/>
-            <TextBlock Name="seriesTypeText" Text="BO1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" FontSize="16" FontFamily="Bahnschrift SemiBold" Foreground="Black"/>
+            <TextBlock Name="gameNumberText" Text="GAME 1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10, 0, 0, 0" FontSize="16" FontFamily="Bahnschrift SemiBold" Foreground="White"/>
+            <TextBlock Name="seriesTypeText" Text="BO1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5, 0, 0, 0" FontSize="16" FontFamily="Bahnschrift SemiBold" Foreground="Black"/>
         </Grid>
     </Grid>
 </Window>
