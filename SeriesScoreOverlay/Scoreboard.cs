@@ -29,7 +29,7 @@ namespace SeriesScoreOverlay
         public int homeScore { get; private set; }
         public int awayScore { get; private set; }
         public bool isVisable { get; private set; }
-        private OverlayWindow view;
+        private LeagueOfLegendsOverlay view;
         public Scoreboard(string _homeName, string _awayName)
         {
             homeName = _homeName;
@@ -38,14 +38,14 @@ namespace SeriesScoreOverlay
             homeScore = 0;
             awayScore = 0;
             isVisable = false;
-            view = new OverlayWindow();
+            view = new LeagueOfLegendsOverlay();
         }
 
         public void apply()
         {
             if (!isVisable)
             {
-                view = new OverlayWindow();
+                view = new LeagueOfLegendsOverlay();
                 view.Show();
                 isVisable = true;
             }
