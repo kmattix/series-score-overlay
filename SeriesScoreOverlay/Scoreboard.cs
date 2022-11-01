@@ -50,6 +50,7 @@ namespace SeriesScoreOverlay
             homeName = _homeName;
             awayName = _awayName;
             series = Series.Bo1;
+            game = Game.RocketLeague;
             homeScore = 0;
             awayScore = 0;
             isVisable = false;
