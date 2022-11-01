@@ -31,6 +31,12 @@ namespace SeriesScoreOverlay
             }
             seriesTypeComboBox.SelectedIndex = 0;
 
+            foreach (Game g in Enum.GetValues(typeof(Game)))
+            {
+                gameSelectionComboBox.Items.Add(g);
+            }
+            gameSelectionComboBox.SelectedIndex = 0;
+
             HotkeysManager.SetupSystemHook();
             HotkeysManager.AddHotkey(new GlobalHotkey(ModifierKeys.Control, Key.F5, () => hkPressed(Team.Home, true)));
             HotkeysManager.AddHotkey(new GlobalHotkey(ModifierKeys.Control, Key.F7, () => hkPressed(Team.Home, false)));
