@@ -60,11 +60,7 @@ namespace SeriesScoreOverlay
             {
                 case Game.RocketLeague:
                 {
-                    if (!isVisable)
-                    {
-                        view = new RocketLeagueOverlay();
-                        activate();
-                    }
+                    if (!isVisable) view = new RocketLeagueOverlay();
                     ((RocketLeagueOverlay) view).homeTeamText.Text = homeName;
                     ((RocketLeagueOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
                     ((RocketLeagueOverlay) view).awayTeamText.Text = awayName;
@@ -75,11 +71,7 @@ namespace SeriesScoreOverlay
                 }
                 case Game.LeagueOfLegends:
                 {
-                    if (!isVisable)
-                    {
-                        view = new LeagueOfLegendsOverlay();
-                        activate();
-                    }
+                    if (!isVisable) view = new LeagueOfLegendsOverlay();
                     ((LeagueOfLegendsOverlay) view).homeTeamText.Text = homeName;
                     ((LeagueOfLegendsOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
                     ((LeagueOfLegendsOverlay) view).awayTeamText.Text = awayName;
@@ -89,6 +81,8 @@ namespace SeriesScoreOverlay
                     break;
                 }
             }
+
+            if(!isVisable) activate();
         }
 
         private string gameNumber()
