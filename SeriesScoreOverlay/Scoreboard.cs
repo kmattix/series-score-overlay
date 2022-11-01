@@ -29,7 +29,7 @@ namespace SeriesScoreOverlay
     {
         RocketLeague,
         LeagueOfLegends,
-        //Valorant,
+        Valorant,
         //SmashUltimate,
         //Overwatch,
         //NBA2k,
@@ -82,6 +82,17 @@ namespace SeriesScoreOverlay
                     ((LeagueOfLegendsOverlay) view).awayTeamScoreText.Text = awayScore.ToString();
                     ((LeagueOfLegendsOverlay) view).seriesTypeText.Text = series.ToString();
                     ((LeagueOfLegendsOverlay) view).gameNumberText.Text = gameNumber();
+                    break;
+                }
+                case Game.Valorant:
+                {
+                    if (!isVisable) view = new ValorantOverlay();
+                    ((ValorantOverlay)view).homeTeamText.Text = homeName;
+                    ((ValorantOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
+                    ((ValorantOverlay)view).awayTeamText.Text = awayName;
+                    ((ValorantOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
+                    ((ValorantOverlay)view).seriesTypeText.Text = series.ToString();
+                    ((ValorantOverlay)view).gameNumberText.Text = gameNumber();
                     break;
                 }
             }
