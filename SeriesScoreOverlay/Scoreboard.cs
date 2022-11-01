@@ -31,6 +31,7 @@ namespace SeriesScoreOverlay
         LeagueOfLegends,
         //Valorant,
         //SmashUltimate,
+        //Overwatch,
         //NBA2k,
         //FIFA
     }
