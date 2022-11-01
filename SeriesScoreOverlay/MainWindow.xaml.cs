@@ -25,11 +25,17 @@ namespace SeriesScoreOverlay
             InitializeComponent();
             scoreboard = new Scoreboard(homeTextBox.Text, awayTextBox.Text);
 
-            foreach (SeriesType st in Enum.GetValues(typeof(SeriesType)))
+            foreach (Series s in Enum.GetValues(typeof(Series)))
             {
-                seriesTypeComboBox.Items.Add(st);
+                seriesTypeComboBox.Items.Add(s);
             }
             seriesTypeComboBox.SelectedIndex = 0;
+
+            foreach (Game g in Enum.GetValues(typeof(Game)))
+            {
+                gameSelectionComboBox.Items.Add(g);
+            }
+            gameSelectionComboBox.SelectedIndex = 0;
 
             HotkeysManager.SetupSystemHook();
             HotkeysManager.AddHotkey(new GlobalHotkey(ModifierKeys.Control, Key.F5, () => hkPressed(Team.Home, true)));
@@ -51,6 +57,11 @@ namespace SeriesScoreOverlay
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             HotkeysManager.ShutdownSystemHook();
+        }
+
+        private void gameSelectionComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            scoreboard.game = (Game) gameSelectionComboBox.SelectedItem;
         }
 
         private void homeAddButton_Click(object sender, RoutedEventArgs e)
@@ -81,10 +92,11 @@ namespace SeriesScoreOverlay
         {
             scoreboard.changeName(Team.Home, homeTextBox.Text);
             scoreboard.changeName(Team.Away, awayTextBox.Text);
-            scoreboard.seriesType = (SeriesType)seriesTypeComboBox.SelectedItem;
+            scoreboard.series = (Series)seriesTypeComboBox.SelectedItem;
             scoreboard.apply();
             applyButton.Content = "Apply";
             clearButton.IsEnabled = true;
+            gameSelectionComboBox.IsEnabled = false;
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
@@ -94,6 +106,7 @@ namespace SeriesScoreOverlay
             awayScore.Content = scoreboard.awayScore;
             homeScore.Content = scoreboard.homeScore;
             clearButton.IsEnabled = false;
+            gameSelectionComboBox.IsEnabled = true;
         }
     }
 }

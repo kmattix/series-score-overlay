@@ -14,9 +14,9 @@ using System.Windows.Shapes;
 
 namespace SeriesScoreOverlay
 {
-    public partial class LeagueOfLegendsOverlay : Window
+    public partial class ValorantOverlay : Window
     {
-        public LeagueOfLegendsOverlay()
+        public ValorantOverlay()
         {
             InitializeComponent();
         }
