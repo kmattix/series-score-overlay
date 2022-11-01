@@ -13,7 +13,7 @@ namespace SeriesScoreOverlay
         Away
     }
 
-    public enum SeriesType
+    public enum Series
     {
         Bo1 = 1,
         Bo3 = 2,
@@ -25,7 +25,7 @@ namespace SeriesScoreOverlay
     public class Scoreboard
     {
         private string homeName, awayName;
-        public SeriesType seriesType { get; set; }
+        public Series series { get; set; }
         public int homeScore { get; private set; }
         public int awayScore { get; private set; }
         public bool isVisable { get; private set; }
@@ -35,7 +35,7 @@ namespace SeriesScoreOverlay
         {
             homeName = _homeName;
             awayName = _awayName;
-            seriesType = SeriesType.Bo1;
+            series = Series.Bo1;
             homeScore = 0;
             awayScore = 0;
             isVisable = false;
@@ -54,8 +54,8 @@ namespace SeriesScoreOverlay
             view.homeTeamScoreText.Text = homeScore.ToString();
             view.awayTeamText.Text = awayName;
             view.awayTeamScoreText.Text = awayScore.ToString();
-            view.seriesTypeText.Text = seriesType.ToString();
-            view.gameNumberText.Text = (homeScore >= (int) seriesType) || (awayScore >= (int) seriesType)? 
+            view.seriesTypeText.Text = series.ToString();
+            view.gameNumberText.Text = (homeScore >= (int) series) || (awayScore >= (int) series)? 
                 "Final" : $"Game {homeScore + awayScore + 1}";
         }
 
@@ -83,7 +83,7 @@ namespace SeriesScoreOverlay
         {
             if (!isVisable) return;
 
-            int MAX_SCORE = (int) seriesType;
+            int MAX_SCORE = (int) series;
 
             if ((team == Team.Home) && (homeScore + 1 <= MAX_SCORE)) homeScore++;
             if ((team == Team.Away) && (awayScore + 1 <= MAX_SCORE)) awayScore++;

@@ -25,9 +25,9 @@ namespace SeriesScoreOverlay
             InitializeComponent();
             scoreboard = new Scoreboard(homeTextBox.Text, awayTextBox.Text);
 
-            foreach (SeriesType st in Enum.GetValues(typeof(SeriesType)))
+            foreach (Series s in Enum.GetValues(typeof(Series)))
             {
-                seriesTypeComboBox.Items.Add(st);
+                seriesTypeComboBox.Items.Add(s);
             }
             seriesTypeComboBox.SelectedIndex = 0;
 
@@ -81,7 +81,7 @@ namespace SeriesScoreOverlay
         {
             scoreboard.changeName(Team.Home, homeTextBox.Text);
             scoreboard.changeName(Team.Away, awayTextBox.Text);
-            scoreboard.seriesType = (SeriesType)seriesTypeComboBox.SelectedItem;
+            scoreboard.series = (Series)seriesTypeComboBox.SelectedItem;
             scoreboard.apply();
             applyButton.Content = "Apply";
             clearButton.IsEnabled = true;
