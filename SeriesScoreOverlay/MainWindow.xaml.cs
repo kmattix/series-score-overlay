@@ -96,6 +96,7 @@ namespace SeriesScoreOverlay
             scoreboard.apply();
             applyButton.Content = "Apply";
             clearButton.IsEnabled = true;
+            gameSelectionComboBox.IsEnabled = false;
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
@@ -105,6 +106,7 @@ namespace SeriesScoreOverlay
             awayScore.Content = scoreboard.awayScore;
             homeScore.Content = scoreboard.homeScore;
             clearButton.IsEnabled = false;
+            gameSelectionComboBox.IsEnabled = true;
         }
     }
 }
