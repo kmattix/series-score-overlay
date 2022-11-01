@@ -59,6 +59,11 @@ namespace SeriesScoreOverlay
             HotkeysManager.ShutdownSystemHook();
         }
 
+        private void gameSelectionComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            scoreboard.game = (Game) gameSelectionComboBox.SelectedItem;
+        }
+
         private void homeAddButton_Click(object sender, RoutedEventArgs e)
         {
             scoreboard.addScore(Team.Home);
