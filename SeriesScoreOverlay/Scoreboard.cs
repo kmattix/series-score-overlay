@@ -22,6 +22,16 @@ namespace SeriesScoreOverlay
         Bo9 = 5
     }
 
+    public enum Game
+    {
+        RocketLeague,
+        LeagueOfLegends,
+        //Valorant,
+        //SmashUltimate,
+        //NBA2k,
+        //FIFA
+    }
+
     public class Scoreboard
     {
         private string homeName, awayName;
