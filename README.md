@@ -6,6 +6,7 @@ Stream scoreboard overlay to track a games series. Currently the only officially
 ## todo
 * Add a no series option
 * Add support for other games:
+  - Overwatch
   - Smash Ultimate
   - NBA2k
   - FIFA
