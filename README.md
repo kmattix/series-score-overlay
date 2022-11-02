@@ -1,10 +1,10 @@
 # series-score-overlay
 **WORK-IN-PROGRESS**
 
-Stream scoreboard overlay to track a games series. Currently the only officially supported game is Rocket League with Bo1-9 modes.
+Stream scoreboard overlay to track a games series. Currently the only officially supported game is Rocket League with Bo1-9 and None modes.
 
 ## todo
-* Add a no series option
+* Add close handler for when X is pressed on the overlay window.
 * Add support for other games:
   - Overwatch
   - Smash Ultimate
