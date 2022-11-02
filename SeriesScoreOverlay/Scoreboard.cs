@@ -22,7 +22,8 @@ namespace SeriesScoreOverlay
         Bo3 = 2,
         Bo5 = 3,
         Bo7 = 4,
-        Bo9 = 5
+        Bo9 = 5,
+        None = int.MaxValue
     }
 
     public enum Game
