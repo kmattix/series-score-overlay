@@ -50,7 +50,7 @@ namespace SeriesScoreOverlay
         {
             homeName = _homeName;
             awayName = _awayName;
-            series = Series.Bo1;
+            series = Series.None;
             game = Game.RocketLeague;
             homeScore = 0;
             awayScore = 0;
@@ -69,7 +69,7 @@ namespace SeriesScoreOverlay
                     ((RocketLeagueOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
                     ((RocketLeagueOverlay) view).awayTeamText.Text = awayName;
                     ((RocketLeagueOverlay) view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((RocketLeagueOverlay) view).seriesTypeText.Text = series.ToString();
+                    ((RocketLeagueOverlay) view).seriesTypeText.Text = seriesString();
                     ((RocketLeagueOverlay) view).gameNumberText.Text = gameNumber();
                     break;
                 }
@@ -80,7 +80,7 @@ namespace SeriesScoreOverlay
                     ((LeagueOfLegendsOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
                     ((LeagueOfLegendsOverlay) view).awayTeamText.Text = awayName;
                     ((LeagueOfLegendsOverlay) view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((LeagueOfLegendsOverlay) view).seriesTypeText.Text = series.ToString();
+                    ((LeagueOfLegendsOverlay) view).seriesTypeText.Text = seriesString();
                     ((LeagueOfLegendsOverlay) view).gameNumberText.Text = gameNumber();
                     break;
                 }
@@ -91,25 +91,13 @@ namespace SeriesScoreOverlay
                     ((ValorantOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
                     ((ValorantOverlay)view).awayTeamText.Text = awayName;
                     ((ValorantOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((ValorantOverlay)view).seriesTypeText.Text = series.ToString();
+                    ((ValorantOverlay)view).seriesTypeText.Text = seriesString();
                     ((ValorantOverlay)view).gameNumberText.Text = gameNumber();
                     break;
                 }
             }
 
             if(!isVisable) activate();
-        }
-
-        private string gameNumber()
-        {
-            return (homeScore >= (int)series) || (awayScore >= (int)series) ? "Final" : $"Game {homeScore + awayScore + 1}";
-        }
-
-        private void activate()
-        {
-            view.Title = $"Series Score Overlay - {game}";
-            view.Show();
-            isVisable = true;
         }
 
         public void clear()
@@ -148,6 +136,23 @@ namespace SeriesScoreOverlay
 
             if (team == Team.Home && homeScore > 0) homeScore--;
             else if (awayScore > 0) awayScore--;
+        }
+
+        private string seriesString()
+        {
+            return series == Series.None ? "N/A" : series.ToString(); 
+        }
+
+        private string gameNumber()
+        {
+            return (homeScore >= (int)series) || (awayScore >= (int)series) ? "FINAL" : $"GAME {homeScore + awayScore + 1}";
+        }
+
+        private void activate()
+        {
+            view.Title = $"Series Score Overlay - {game}";
+            view.Show();
+            isVisable = true;
         }
     }
 }
