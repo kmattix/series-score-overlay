@@ -21,7 +21,7 @@ namespace SeriesScoreOverlay
         Bo5 = 3,
         Bo7 = 4,
         Bo9 = 5,
-        None = int.MaxValue
+        None = int.
     }
 
     public enum Game
@@ -99,18 +99,6 @@ namespace SeriesScoreOverlay
             if(!isVisable) activate();
         }
 
-        private string gameNumber()
-        {
-            return (homeScore >= (int)series) || (awayScore >= (int)series) ? "Final" : $"Game {homeScore + awayScore + 1}";
-        }
-
-        private void activate()
-        {
-            view.Title = $"Series Score Overlay - {game}";
-            view.Show();
-            isVisable = true;
-        }
-
         public void clear()
         {
             if (isVisable)
@@ -147,6 +135,17 @@ namespace SeriesScoreOverlay
 
             if (team == Team.Home && homeScore > 0) homeScore--;
             else if (awayScore > 0) awayScore--;
+        }
+        private string gameNumber()
+        {
+            return (homeScore >= (int)series) || (awayScore >= (int)series) ? "Final" : $"Game {homeScore + awayScore + 1}";
+        }
+
+        private void activate()
+        {
+            view.Title = $"Series Score Overlay - {game}";
+            view.Show();
+            isVisable = true;
         }
     }
 }
