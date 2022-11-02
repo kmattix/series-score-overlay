@@ -14,4 +14,10 @@ Stream scoreboard overlay to track a games series. Currently the only officially
 * ~~Change overlay design to something better~~ (kind of finished, but could always be better)
 
 ## running the app
-Go to [Releases](https://github.com/kmattix/series-score-overlay/releases) and select the most recent `Tag`, then follow the `Setup` steps.
+  1. Go to [Releases](https://github.com/kmattix/series-score-overlay/releases).
+  2. Select the most recent `Tag`.
+  3. Follow the `Setup` steps.
+
+## building the app for release
+ 1. Open a CLI in `series-score-overlay/SeriesScoreOverlay` or whever your solution is located.
+ 2. Run `dotnet publish -c Release --self-contained -r win-x64 -p:PublishSingleFile=true`.
