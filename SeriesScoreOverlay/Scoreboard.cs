@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,8 +22,7 @@ namespace SeriesScoreOverlay
         Bo3 = 2,
         Bo5 = 3,
         Bo7 = 4,
-        Bo9 = 5,
-        None = int.MaxValue
+        Bo9 = 5
     }
 
     public enum Game
