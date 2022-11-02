@@ -49,7 +49,7 @@ namespace SeriesScoreOverlay
         {
             homeName = _homeName;
             awayName = _awayName;
-            series = Series.Bo1;
+            series = Series.None;
             game = Game.RocketLeague;
             homeScore = 0;
             awayScore = 0;

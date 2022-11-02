@@ -29,7 +29,7 @@ namespace SeriesScoreOverlay
             {
                 seriesTypeComboBox.Items.Add(s);
             }
-            seriesTypeComboBox.SelectedIndex = 0;
+            seriesTypeComboBox.SelectedIndex = Enum.GetValues(typeof(Series)).Length - 1;
 
             foreach (Game g in Enum.GetValues(typeof(Game)))
             {
