@@ -144,7 +144,7 @@ namespace SeriesScoreOverlay
 
         private string gameNumber()
         {
-            return (homeScore >= (int)series) || (awayScore >= (int)series) ? "Final" : $"Game {homeScore + awayScore + 1}";
+            return (homeScore >= (int)series) || (awayScore >= (int)series) ? "FINAL" : $"GAME {homeScore + awayScore + 1}";
         }
 
         private void activate()
