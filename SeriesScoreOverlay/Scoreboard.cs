@@ -21,7 +21,7 @@ namespace SeriesScoreOverlay
         Bo5 = 3,
         Bo7 = 4,
         Bo9 = 5,
-        None = int.
+        None = int.MaxValue
     }
 
     public enum Game
@@ -68,7 +68,7 @@ namespace SeriesScoreOverlay
                     ((RocketLeagueOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
                     ((RocketLeagueOverlay) view).awayTeamText.Text = awayName;
                     ((RocketLeagueOverlay) view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((RocketLeagueOverlay) view).seriesTypeText.Text = series.ToString();
+                    ((RocketLeagueOverlay) view).seriesTypeText.Text = seriesString();
                     ((RocketLeagueOverlay) view).gameNumberText.Text = gameNumber();
                     break;
                 }
@@ -79,7 +79,7 @@ namespace SeriesScoreOverlay
                     ((LeagueOfLegendsOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
                     ((LeagueOfLegendsOverlay) view).awayTeamText.Text = awayName;
                     ((LeagueOfLegendsOverlay) view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((LeagueOfLegendsOverlay) view).seriesTypeText.Text = series.ToString();
+                    ((LeagueOfLegendsOverlay) view).seriesTypeText.Text = seriesString();
                     ((LeagueOfLegendsOverlay) view).gameNumberText.Text = gameNumber();
                     break;
                 }
@@ -90,7 +90,7 @@ namespace SeriesScoreOverlay
                     ((ValorantOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
                     ((ValorantOverlay)view).awayTeamText.Text = awayName;
                     ((ValorantOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((ValorantOverlay)view).seriesTypeText.Text = series.ToString();
+                    ((ValorantOverlay)view).seriesTypeText.Text = seriesString();
                     ((ValorantOverlay)view).gameNumberText.Text = gameNumber();
                     break;
                 }
@@ -136,6 +136,12 @@ namespace SeriesScoreOverlay
             if (team == Team.Home && homeScore > 0) homeScore--;
             else if (awayScore > 0) awayScore--;
         }
+
+        private string seriesString()
+        {
+            return series == Series.None ? "N/A" : series.ToString(); 
+        }
+
         private string gameNumber()
         {
             return (homeScore >= (int)series) || (awayScore >= (int)series) ? "Final" : $"Game {homeScore + awayScore + 1}";
