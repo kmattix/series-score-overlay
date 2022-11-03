@@ -27,3 +27,4 @@ Stream scoreboard overlay to track a games series. Currently Rocket League, Leag
 ## building the app for release
  1. Open a CLI in `series-score-overlay/SeriesScoreOverlay` or whever your solution is located.
  2. Run `dotnet publish -c Release --self-contained -r win-x64 -p:PublishSingleFile=true`.
+ 3. Navigate to `series-score-overlay\SeriesScoreOverlay\obj\Release\net6.0-windows\publish` and all the publishable files are located in this directory.
