@@ -5,6 +5,7 @@ Stream scoreboard overlay to track a games series. Currently Rocket League, Leag
 
 ## todo
 * Add close handler for when X is pressed on the overlay window.
+* Add properties to save applied changes for application start (redundency in case of accidental close or application crash).
 * Add UI changes in the control panel to show when the overlay has not been aplied.
   - Specific elements should be bolded or otherwise when they have unapplied changes.
   - Add buttons
