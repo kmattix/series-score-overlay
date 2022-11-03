@@ -66,34 +66,34 @@ namespace SeriesScoreOverlay
                 case Game.RocketLeague:
                 {
                     if (!isVisable) view = new RocketLeagueOverlay();
-                    ((RocketLeagueOverlay) view).homeTeamText.Text = homeName;
-                    ((RocketLeagueOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
-                    ((RocketLeagueOverlay) view).awayTeamText.Text = awayName;
-                    ((RocketLeagueOverlay) view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((RocketLeagueOverlay) view).seriesTypeText.Text = seriesString();
-                    ((RocketLeagueOverlay) view).gameNumberText.Text = gameNumber();
+                    ((RocketLeagueOverlay)view).homeTeamText.Text = homeName;
+                    ((RocketLeagueOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
+                    ((RocketLeagueOverlay)view).awayTeamText.Text = awayName;
+                    ((RocketLeagueOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
+                    ((RocketLeagueOverlay)view).seriesTypeText.Text = seriesString();
+                    ((RocketLeagueOverlay)view).gameNumberText.Text = gameNumber();
                     break;
                 }
                 case Game.LeagueOfLegends:
                 {
                     if (!isVisable) view = new LeagueOfLegendsOverlay();
-                    ((LeagueOfLegendsOverlay) view).homeTeamText.Text = homeName;
-                    ((LeagueOfLegendsOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
-                    ((LeagueOfLegendsOverlay) view).awayTeamText.Text = awayName;
-                    ((LeagueOfLegendsOverlay) view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((LeagueOfLegendsOverlay) view).seriesTypeText.Text = seriesString();
-                    ((LeagueOfLegendsOverlay) view).gameNumberText.Text = gameNumber();
+                    ((LeagueOfLegendsOverlay)view).homeTeamText.Text = homeName;
+                    ((LeagueOfLegendsOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
+                    ((LeagueOfLegendsOverlay)view).awayTeamText.Text = awayName;
+                    ((LeagueOfLegendsOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
+                    ((LeagueOfLegendsOverlay)view).seriesTypeText.Text = seriesString();
+                    ((LeagueOfLegendsOverlay)view).gameNumberText.Text = gameNumber();
                     break;
                 }
                 case Game.Valorant:
                 {
                     if (!isVisable) view = new ValorantOverlay();
-                    ((ValorantOverlay) view).homeTeamText.Text = homeName;
-                    ((ValorantOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
-                    ((ValorantOverlay) view).awayTeamText.Text = awayName;
-                    ((ValorantOverlay) view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((ValorantOverlay) view).seriesTypeText.Text = seriesString();
-                    ((ValorantOverlay) view).gameNumberText.Text = gameNumber();
+                    ((ValorantOverlay)view).homeTeamText.Text = homeName;
+                    ((ValorantOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
+                    ((ValorantOverlay)view).awayTeamText.Text = awayName;
+                    ((ValorantOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
+                    ((ValorantOverlay)view).seriesTypeText.Text = seriesString();
+                    ((ValorantOverlay)view).gameNumberText.Text = gameNumber();
                     break;
                 }
             }
