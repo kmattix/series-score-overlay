@@ -88,12 +88,12 @@ namespace SeriesScoreOverlay
                 case Game.Valorant:
                 {
                     if (!isVisable) view = new ValorantOverlay();
-                    ((ValorantOverlay)view).homeTeamText.Text = homeName;
-                    ((ValorantOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
-                    ((ValorantOverlay)view).awayTeamText.Text = awayName;
-                    ((ValorantOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((ValorantOverlay)view).seriesTypeText.Text = seriesString();
-                    ((ValorantOverlay)view).gameNumberText.Text = gameNumber();
+                    ((ValorantOverlay) view).homeTeamText.Text = homeName;
+                    ((ValorantOverlay) view).homeTeamScoreText.Text = homeScore.ToString();
+                    ((ValorantOverlay) view).awayTeamText.Text = awayName;
+                    ((ValorantOverlay) view).awayTeamScoreText.Text = awayScore.ToString();
+                    ((ValorantOverlay) view).seriesTypeText.Text = seriesString();
+                    ((ValorantOverlay) view).gameNumberText.Text = gameNumber();
                     break;
                 }
             }
