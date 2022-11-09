@@ -8,12 +8,12 @@ namespace SeriesScoreOverlay
 {
     public partial class MainWindow : Window
     {
-        private Scoreboard scoreboard;
+        private Scoreboard _scoreboard;
 
         public MainWindow()
         {
             InitializeComponent();
-            scoreboard = new Scoreboard(homeTextBox.Text, awayTextBox.Text);
+            _scoreboard = new Scoreboard(homeTextBox.Text, awayTextBox.Text);
 
             foreach (Series s in Enum.GetValues(typeof(Series)))
             {
@@ -51,39 +51,39 @@ namespace SeriesScoreOverlay
 
         private void gameSelectionComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            scoreboard.Game = (Game)gameSelectionComboBox.SelectedItem;
+            _scoreboard.Game = (Game)gameSelectionComboBox.SelectedItem;
         }
 
         private void homeAddButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.AddScore(Team.Home);
-            homeScore.Content = scoreboard.HomeScore;
+            _scoreboard.AddScore(Team.Home);
+            homeScore.Content = _scoreboard.HomeScore;
         }
 
         private void homeRemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.RemoveScore(Team.Home);
-            homeScore.Content = scoreboard.HomeScore;
+            _scoreboard.RemoveScore(Team.Home);
+            homeScore.Content = _scoreboard.HomeScore;
         }
 
         private void awayAddButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.AddScore(Team.Away);
-            awayScore.Content = scoreboard.AwayScore;
+            _scoreboard.AddScore(Team.Away);
+            awayScore.Content = _scoreboard.AwayScore;
         }
 
         private void awayRemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.RemoveScore(Team.Away);
-            awayScore.Content = scoreboard.AwayScore;
+            _scoreboard.RemoveScore(Team.Away);
+            awayScore.Content = _scoreboard.AwayScore;
         }
 
         private void applyButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.ChangeName(Team.Home, homeTextBox.Text);
-            scoreboard.ChangeName(Team.Away, awayTextBox.Text);
-            scoreboard.Series = (Series)seriesTypeComboBox.SelectedItem;
-            scoreboard.Apply();
+            _scoreboard.ChangeName(Team.Home, homeTextBox.Text);
+            _scoreboard.ChangeName(Team.Away, awayTextBox.Text);
+            _scoreboard.Series = (Series)seriesTypeComboBox.SelectedItem;
+            _scoreboard.Apply();
             applyButton.Content = "Apply";
             clearButton.IsEnabled = true;
             gameSelectionComboBox.IsEnabled = false;
@@ -91,10 +91,10 @@ namespace SeriesScoreOverlay
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.Clear();
+            _scoreboard.Clear();
             applyButton.Content = "Launch";
-            awayScore.Content = scoreboard.AwayScore;
-            homeScore.Content = scoreboard.HomeScore;
+            awayScore.Content = _scoreboard.AwayScore;
+            homeScore.Content = _scoreboard.HomeScore;
             clearButton.IsEnabled = false;
             gameSelectionComboBox.IsEnabled = true;
         }
