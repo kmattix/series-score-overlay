@@ -51,39 +51,39 @@ namespace SeriesScoreOverlay
 
         private void gameSelectionComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            scoreboard.game = (Game)gameSelectionComboBox.SelectedItem;
+            scoreboard.Game = (Game)gameSelectionComboBox.SelectedItem;
         }
 
         private void homeAddButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.addScore(Team.Home);
-            homeScore.Content = scoreboard.homeScore;
+            scoreboard.AddScore(Team.Home);
+            homeScore.Content = scoreboard.HomeScore;
         }
 
         private void homeRemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.removeScore(Team.Home);
-            homeScore.Content = scoreboard.homeScore;
+            scoreboard.RemoveScore(Team.Home);
+            homeScore.Content = scoreboard.HomeScore;
         }
 
         private void awayAddButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.addScore(Team.Away);
-            awayScore.Content = scoreboard.awayScore;
+            scoreboard.AddScore(Team.Away);
+            awayScore.Content = scoreboard.AwayScore;
         }
 
         private void awayRemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.removeScore(Team.Away);
-            awayScore.Content = scoreboard.awayScore;
+            scoreboard.RemoveScore(Team.Away);
+            awayScore.Content = scoreboard.AwayScore;
         }
 
         private void applyButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.changeName(Team.Home, homeTextBox.Text);
-            scoreboard.changeName(Team.Away, awayTextBox.Text);
-            scoreboard.series = (Series)seriesTypeComboBox.SelectedItem;
-            scoreboard.apply();
+            scoreboard.ChangeName(Team.Home, homeTextBox.Text);
+            scoreboard.ChangeName(Team.Away, awayTextBox.Text);
+            scoreboard.Series = (Series)seriesTypeComboBox.SelectedItem;
+            scoreboard.Apply();
             applyButton.Content = "Apply";
             clearButton.IsEnabled = true;
             gameSelectionComboBox.IsEnabled = false;
@@ -91,10 +91,10 @@ namespace SeriesScoreOverlay
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
-            scoreboard.clear();
+            scoreboard.Clear();
             applyButton.Content = "Launch";
-            awayScore.Content = scoreboard.awayScore;
-            homeScore.Content = scoreboard.homeScore;
+            awayScore.Content = scoreboard.AwayScore;
+            homeScore.Content = scoreboard.HomeScore;
             clearButton.IsEnabled = false;
             gameSelectionComboBox.IsEnabled = true;
         }

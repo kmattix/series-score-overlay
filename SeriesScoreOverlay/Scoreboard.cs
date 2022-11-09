@@ -31,121 +31,121 @@ namespace SeriesScoreOverlay
 
     public class Scoreboard
     {
-        private string homeName, awayName;
-        public Series series { get; set; }
-        public Game game { get; set; }
-        public int homeScore { get; private set; }
-        public int awayScore { get; private set; }
-        public bool isVisable { get; private set; }
-        private Window view;
+        private string _homeName, _awayName;
+        public Series Series { get; set; }
+        public Game Game { get; set; }
+        public int HomeScore { get; private set; }
+        public int AwayScore { get; private set; }
+        public bool Visable { get; private set; }
+        private Window _view;
 
         public Scoreboard(string _homeName, string _awayName)
         {
-            homeName = _homeName;
-            awayName = _awayName;
-            series = Series.None;
-            game = Game.RocketLeague;
-            homeScore = 0;
-            awayScore = 0;
-            isVisable = false;
-            view = new Window();
+            this._homeName = _homeName;
+            this._awayName = _awayName;
+            Series = Series.None;
+            Game = Game.RocketLeague;
+            HomeScore = 0;
+            AwayScore = 0;
+            Visable = false;
+            _view = new Window();
         }
 
-        public void apply()
+        public void Apply()
         {
-            switch (game)
+            switch (Game)
             {
                 case Game.RocketLeague:
                 {
-                    if (!isVisable) view = new RocketLeagueOverlay();
-                    ((RocketLeagueOverlay)view).homeTeamText.Text = homeName;
-                    ((RocketLeagueOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
-                    ((RocketLeagueOverlay)view).awayTeamText.Text = awayName;
-                    ((RocketLeagueOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((RocketLeagueOverlay)view).seriesTypeText.Text = seriesString();
-                    ((RocketLeagueOverlay)view).gameNumberText.Text = gameNumber();
+                    if (!Visable) _view = new RocketLeagueOverlay();
+                    ((RocketLeagueOverlay)_view).homeTeamText.Text = _homeName;
+                    ((RocketLeagueOverlay)_view).homeTeamScoreText.Text = HomeScore.ToString();
+                    ((RocketLeagueOverlay)_view).awayTeamText.Text = _awayName;
+                    ((RocketLeagueOverlay)_view).awayTeamScoreText.Text = AwayScore.ToString();
+                    ((RocketLeagueOverlay)_view).seriesTypeText.Text = seriesString();
+                    ((RocketLeagueOverlay)_view).gameNumberText.Text = gameNumber();
                     break;
                 }
                 case Game.LeagueOfLegends:
                 {
-                    if (!isVisable) view = new LeagueOfLegendsOverlay();
-                    ((LeagueOfLegendsOverlay)view).homeTeamText.Text = homeName;
-                    ((LeagueOfLegendsOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
-                    ((LeagueOfLegendsOverlay)view).awayTeamText.Text = awayName;
-                    ((LeagueOfLegendsOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((LeagueOfLegendsOverlay)view).seriesTypeText.Text = seriesString();
-                    ((LeagueOfLegendsOverlay)view).gameNumberText.Text = gameNumber();
+                    if (!Visable) _view = new LeagueOfLegendsOverlay();
+                    ((LeagueOfLegendsOverlay)_view).homeTeamText.Text = _homeName;
+                    ((LeagueOfLegendsOverlay)_view).homeTeamScoreText.Text = HomeScore.ToString();
+                    ((LeagueOfLegendsOverlay)_view).awayTeamText.Text = _awayName;
+                    ((LeagueOfLegendsOverlay)_view).awayTeamScoreText.Text = AwayScore.ToString();
+                    ((LeagueOfLegendsOverlay)_view).seriesTypeText.Text = seriesString();
+                    ((LeagueOfLegendsOverlay)_view).gameNumberText.Text = gameNumber();
                     break;
                 }
                 case Game.Valorant:
                 {
-                    if (!isVisable) view = new ValorantOverlay();
-                    ((ValorantOverlay)view).homeTeamText.Text = homeName;
-                    ((ValorantOverlay)view).homeTeamScoreText.Text = homeScore.ToString();
-                    ((ValorantOverlay)view).awayTeamText.Text = awayName;
-                    ((ValorantOverlay)view).awayTeamScoreText.Text = awayScore.ToString();
-                    ((ValorantOverlay)view).seriesTypeText.Text = seriesString();
-                    ((ValorantOverlay)view).gameNumberText.Text = gameNumber();
+                    if (!Visable) _view = new ValorantOverlay();
+                    ((ValorantOverlay)_view).homeTeamText.Text = _homeName;
+                    ((ValorantOverlay)_view).homeTeamScoreText.Text = HomeScore.ToString();
+                    ((ValorantOverlay)_view).awayTeamText.Text = _awayName;
+                    ((ValorantOverlay)_view).awayTeamScoreText.Text = AwayScore.ToString();
+                    ((ValorantOverlay)_view).seriesTypeText.Text = seriesString();
+                    ((ValorantOverlay)_view).gameNumberText.Text = gameNumber();
                     break;
                 }
             }
 
-            if(!isVisable) activate();
+            if(!Visable) activate();
         }
 
-        public void clear()
+        public void Clear()
         {
-            if (isVisable)
+            if (Visable)
             {
-                view.Close();
-                isVisable = false;
+                _view.Close();
+                Visable = false;
             }
 
-            homeScore = 0;
-            awayScore = 0;
+            HomeScore = 0;
+            AwayScore = 0;
         }
 
-        public void changeName(Team team, string name)
+        public void ChangeName(Team team, string name)
         {
             name = name.ToUpper();
 
-            if(team == Team.Home) homeName = name;
-            else awayName = name;
+            if(team == Team.Home) _homeName = name;
+            else _awayName = name;
         }
 
-        public void addScore(Team team)
+        public void AddScore(Team team)
         {
-            if (!isVisable) return;
+            if (!Visable) return;
 
-            int MAX_SCORE = (int) series;
+            int MAX_SCORE = (int) Series;
 
-            if ((team == Team.Home) && (homeScore + 1 <= MAX_SCORE)) homeScore++;
-            if ((team == Team.Away) && (awayScore + 1 <= MAX_SCORE)) awayScore++;
+            if ((team == Team.Home) && (HomeScore + 1 <= MAX_SCORE)) HomeScore++;
+            if ((team == Team.Away) && (AwayScore + 1 <= MAX_SCORE)) AwayScore++;
         }
 
-        public void removeScore(Team team)
+        public void RemoveScore(Team team)
         {
-            if (!isVisable) return;
+            if (!Visable) return;
 
-            if (team == Team.Home && homeScore > 0) homeScore--;
-            else if (awayScore > 0) awayScore--;
+            if (team == Team.Home && HomeScore > 0) HomeScore--;
+            else if (AwayScore > 0) AwayScore--;
         }
 
         private string seriesString()
         {
-            return series == Series.None ? "N/A" : series.ToString(); 
+            return Series == Series.None ? "N/A" : Series.ToString(); 
         }
 
         private string gameNumber()
         {
-            return (homeScore >= (int)series) || (awayScore >= (int)series) ? "FINAL" : $"GAME {homeScore + awayScore + 1}";
+            return (HomeScore >= (int)Series) || (AwayScore >= (int)Series) ? "FINAL" : $"GAME {HomeScore + AwayScore + 1}";
         }
 
         private void activate()
         {
-            view.Title = $"Series Score Overlay - {game}";
-            view.Show();
-            isVisable = true;
+            _view.Title = $"Series Score Overlay - {Game}";
+            _view.Show();
+            Visable = true;
         }
     }
 }
